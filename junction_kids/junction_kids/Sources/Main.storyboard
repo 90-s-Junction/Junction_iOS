@@ -101,6 +101,7 @@
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="Now:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b2R-gf-Nha">
                                         <rect key="frame" x="46" y="6" width="308" height="34"/>
+                                        <color key="tintColor" red="0.19215686269999999" green="0.74509803919999995" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="n7m-VR-pgr"/>
                                         </constraints>
@@ -126,6 +127,7 @@
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="Where are you going to?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NFm-zu-lcW">
                                         <rect key="frame" x="45" y="56.5" width="309" height="34"/>
+                                        <color key="tintColor" red="0.19215686269999999" green="0.74509803919999995" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="sud-Fs-zTC"/>
                                         </constraints>
