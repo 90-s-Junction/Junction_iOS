@@ -6,6 +6,7 @@ target 'junction_kids' do
   use_frameworks!
 
   pod 'GoogleMaps', '5.0.0'
+  pod 'GooglePlaces'
 
   # Pods for junction_kids
 
