@@ -8,7 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5828134CEEF7CCD52CDA1FC7 /* Pods_junction_kids.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A41878B7CE8656288D95F5 /* Pods_junction_kids.framework */; };
-		9B65067B2658B09F00FAA877 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6505E52658B09E00FAA877 /* ViewController.swift */; };
+		9B227A9126591C0200D7E453 /* MapRouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B227A9026591C0200D7E453 /* MapRouteTableViewCell.swift */; };
+		9B227A9426591D2F00D7E453 /* MapRouteMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B227A9326591D2F00D7E453 /* MapRouteMoreTableViewCell.swift */; };
+		9B227A9C26591F3900D7E453 /* MapRouteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B227A9B26591F3900D7E453 /* MapRouteModel.swift */; };
+		9B227AA026591FA800D7E453 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B227A9F26591FA800D7E453 /* MapModel.swift */; };
+		9B227AA32659303900D7E453 /* MapSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B227AA22659303900D7E453 /* MapSearchTableViewCell.swift */; };
+		9B227AA62659408400D7E453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B6506772658B09F00FAA877 /* Assets.xcassets */; };
+		9B227AAE2659412900D7E453 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B227AAD2659412900D7E453 /* Color+.swift */; };
 		9B6506862658B09F00FAA877 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6506782658B09F00FAA877 /* AppDelegate.swift */; };
 		9B6506882658B09F00FAA877 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65067A2658B09F00FAA877 /* SceneDelegate.swift */; };
 		9B6506A22658B41E00FAA877 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6506A12658B41E00FAA877 /* Main.storyboard */; };
@@ -19,8 +25,13 @@
 /* Begin PBXFileReference section */
 		44A41878B7CE8656288D95F5 /* Pods_junction_kids.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_junction_kids.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		880D1C44E37B690B44CFA290 /* Pods-junction_kids.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-junction_kids.debug.xcconfig"; path = "Target Support Files/Pods-junction_kids/Pods-junction_kids.debug.xcconfig"; sourceTree = "<group>"; };
+		9B227A9026591C0200D7E453 /* MapRouteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouteTableViewCell.swift; sourceTree = "<group>"; };
+		9B227A9326591D2F00D7E453 /* MapRouteMoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouteMoreTableViewCell.swift; sourceTree = "<group>"; };
+		9B227A9B26591F3900D7E453 /* MapRouteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouteModel.swift; sourceTree = "<group>"; };
+		9B227A9F26591FA800D7E453 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		9B227AA22659303900D7E453 /* MapSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchTableViewCell.swift; sourceTree = "<group>"; };
+		9B227AAD2659412900D7E453 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		9B6505CC2658AF1900FAA877 /* junction_kids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = junction_kids.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B6505E52658B09E00FAA877 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9B6506772658B09F00FAA877 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B6506782658B09F00FAA877 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B6506792658B09F00FAA877 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +66,50 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9B227A9626591D6400D7E453 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				9BBB92252658E33400626C85 /* MapViewController.swift */,
+				9B227A9326591D2F00D7E453 /* MapRouteMoreTableViewCell.swift */,
+				9B227A9026591C0200D7E453 /* MapRouteTableViewCell.swift */,
+				9B227AA22659303900D7E453 /* MapSearchTableViewCell.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		9B227A9826591F0700D7E453 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B227A9A26591F1500D7E453 /* Map */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9B227A9926591F0C00D7E453 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9B227A9626591D6400D7E453 /* Map */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9B227A9A26591F1500D7E453 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				9B227A9B26591F3900D7E453 /* MapRouteModel.swift */,
+				9B227A9F26591FA800D7E453 /* MapModel.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		9B227AAC2659411B00D7E453 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9B227AAD2659412900D7E453 /* Color+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9B6505C32658AF1900FAA877 = {
 			isa = PBXGroup;
 			children = (
@@ -85,10 +140,11 @@
 		9B6505E42658B09E00FAA877 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				9B6505E52658B09E00FAA877 /* ViewController.swift */,
+				9B227AAC2659411B00D7E453 /* Extensions */,
+				9B227A9926591F0C00D7E453 /* View */,
+				9B227A9826591F0700D7E453 /* Model */,
 				9B6506A12658B41E00FAA877 /* Main.storyboard */,
 				9B6506A42658B43F00FAA877 /* Launch Screen.storyboard */,
-				9BBB92252658E33400626C85 /* MapViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -175,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B6506A52658B43F00FAA877 /* Launch Screen.storyboard in Resources */,
+				9B227AA62659408400D7E453 /* Assets.xcassets in Resources */,
 				9B6506A22658B41E00FAA877 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,10 +285,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B227AA026591FA800D7E453 /* MapModel.swift in Sources */,
+				9B227AAE2659412900D7E453 /* Color+.swift in Sources */,
 				9B6506862658B09F00FAA877 /* AppDelegate.swift in Sources */,
-				9B65067B2658B09F00FAA877 /* ViewController.swift in Sources */,
+				9B227AA32659303900D7E453 /* MapSearchTableViewCell.swift in Sources */,
+				9B227A9126591C0200D7E453 /* MapRouteTableViewCell.swift in Sources */,
 				9B6506882658B09F00FAA877 /* SceneDelegate.swift in Sources */,
 				9BBB92262658E33400626C85 /* MapViewController.swift in Sources */,
+				9B227A9426591D2F00D7E453 /* MapRouteMoreTableViewCell.swift in Sources */,
+				9B227A9C26591F3900D7E453 /* MapRouteModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

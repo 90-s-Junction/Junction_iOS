@@ -7,6 +7,7 @@ target 'junction_kids' do
 
   pod 'GoogleMaps', '5.0.0'
   pod 'GooglePlaces'
+  pod 'Alamofire'
 
   # Pods for junction_kids
 
