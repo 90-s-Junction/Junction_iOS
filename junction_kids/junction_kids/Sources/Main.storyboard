@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaC-kF-mgD">
-                                <rect key="frame" x="32" y="766" width="60" height="60"/>
+                                <rect key="frame" x="25" y="800" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="6cd-DL-HRj"/>
                                     <constraint firstAttribute="width" constant="60" id="VBW-Pi-WNF"/>
@@ -164,7 +164,7 @@
                         <constraints>
                             <constraint firstItem="rPd-qf-fet" firstAttribute="top" secondItem="3aC-gE-snj" secondAttribute="top" id="15i-50-mUu"/>
                             <constraint firstItem="dem-fs-ZGn" firstAttribute="top" secondItem="O6y-bS-Bed" secondAttribute="top" constant="10" id="IE1-BW-Fk0"/>
-                            <constraint firstItem="O6y-bS-Bed" firstAttribute="bottom" secondItem="zaC-kF-mgD" secondAttribute="bottom" constant="36" id="RDM-ip-8PI"/>
+                            <constraint firstAttribute="bottom" secondItem="zaC-kF-mgD" secondAttribute="bottom" constant="36" id="RDM-ip-8PI"/>
                             <constraint firstItem="dem-fs-ZGn" firstAttribute="top" secondItem="O6y-bS-Bed" secondAttribute="top" constant="10" id="RJf-Mo-GuF"/>
                             <constraint firstAttribute="bottom" secondItem="EnX-gd-VtU" secondAttribute="bottom" id="Soa-sq-Ugg"/>
                             <constraint firstItem="O6y-bS-Bed" firstAttribute="trailing" secondItem="dem-fs-ZGn" secondAttribute="trailing" constant="25" id="Tw4-NW-2dS"/>
@@ -175,7 +175,7 @@
                             <constraint firstItem="rPd-qf-fet" firstAttribute="trailing" secondItem="O6y-bS-Bed" secondAttribute="trailing" id="tl0-KK-uZj"/>
                             <constraint firstItem="EnX-gd-VtU" firstAttribute="leading" secondItem="3aC-gE-snj" secondAttribute="leading" id="tuZ-2l-Bt6"/>
                             <constraint firstItem="EnX-gd-VtU" firstAttribute="top" secondItem="3aC-gE-snj" secondAttribute="top" id="vLQ-UL-H9y"/>
-                            <constraint firstItem="zaC-kF-mgD" firstAttribute="leading" secondItem="O6y-bS-Bed" secondAttribute="leading" constant="32" id="yOt-Ly-VvP"/>
+                            <constraint firstItem="zaC-kF-mgD" firstAttribute="leading" secondItem="3aC-gE-snj" secondAttribute="leading" constant="25" id="yOt-Ly-VvP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eUP-PY-558"/>
