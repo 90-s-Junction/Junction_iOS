@@ -321,7 +321,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4AW-XZ-7m6">
-                                <rect key="frame" x="58" y="91" width="0.0" height="0.0"/>
+                                <rect key="frame" x="58" y="77" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="0.0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -368,7 +368,7 @@
                             <constraint firstItem="1CP-LL-KWW" firstAttribute="centerY" secondItem="Xrd-oC-dd8" secondAttribute="centerY" id="cAT-2t-rGj"/>
                             <constraint firstItem="Xrd-oC-dd8" firstAttribute="top" secondItem="aA8-Cg-p1B" secondAttribute="bottom" constant="6.1799999999999997" id="lhI-lb-BpW"/>
                             <constraint firstItem="jBK-IZ-GBf" firstAttribute="trailing" secondItem="xV3-rc-wFu" secondAttribute="trailing" id="lkU-QI-Ftd"/>
-                            <constraint firstItem="1CP-LL-KWW" firstAttribute="top" secondItem="4AW-XZ-7m6" secondAttribute="bottom" constant="27" id="sw5-aP-sGa"/>
+                            <constraint firstItem="4AW-XZ-7m6" firstAttribute="centerY" secondItem="o11-02-5ov" secondAttribute="centerY" id="s8c-Ph-Nee"/>
                             <constraint firstItem="LYJ-YC-bVp" firstAttribute="top" secondItem="jBK-IZ-GBf" secondAttribute="top" constant="120" id="vvY-LH-bgs"/>
                             <constraint firstItem="o11-02-5ov" firstAttribute="leading" secondItem="jBK-IZ-GBf" secondAttribute="leading" constant="24" id="y60-Nw-yNV"/>
                         </constraints>
