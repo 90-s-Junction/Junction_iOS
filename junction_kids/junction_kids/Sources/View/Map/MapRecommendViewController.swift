@@ -41,6 +41,8 @@ class MapRecommendViewController: UIViewController {
         navigationController?.navigationBar.topItem?.title = ""
         navigationController?.navigationBar.tintColor = .black
         
+        startLabel.font = UIFont(name: "Volte", size: 16.0)
+        endLabel.font = UIFont(name: "Volte", size: 16.0)
         startLabel.text = startText
         endLabel.text = endText
     }
