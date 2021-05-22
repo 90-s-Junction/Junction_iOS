@@ -23,7 +23,7 @@
 		9B6506862658B09F00FAA877 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6506782658B09F00FAA877 /* AppDelegate.swift */; };
 		9B6506882658B09F00FAA877 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65067A2658B09F00FAA877 /* SceneDelegate.swift */; };
 		9B6506A22658B41E00FAA877 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6506A12658B41E00FAA877 /* Main.storyboard */; };
-		9B6506A52658B43F00FAA877 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6506A42658B43F00FAA877 /* Launch Screen.storyboard */; };
+		9B6506A52658B43F00FAA877 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6506A42658B43F00FAA877 /* LaunchScreen.storyboard */; };
 		9BBB92262658E33400626C85 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBB92252658E33400626C85 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +50,7 @@
 		9B65069A2658B21700FAA877 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		9B65069D2658B21E00FAA877 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		9B6506A12658B41E00FAA877 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		9B6506A42658B43F00FAA877 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		9B6506A42658B43F00FAA877 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9BBB92252658E33400626C85 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B9F32D3CE0E6BF3887B26D1E /* Pods-junction_kids.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-junction_kids.release.xcconfig"; path = "Target Support Files/Pods-junction_kids/Pods-junction_kids.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,7 +175,7 @@
 				9B227A9926591F0C00D7E453 /* View */,
 				9B227A9826591F0700D7E453 /* Model */,
 				9B6506A12658B41E00FAA877 /* Main.storyboard */,
-				9B6506A42658B43F00FAA877 /* Launch Screen.storyboard */,
+				9B6506A42658B43F00FAA877 /* LaunchScreen.storyboard */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -262,7 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B6506A52658B43F00FAA877 /* Launch Screen.storyboard in Resources */,
+				9B6506A52658B43F00FAA877 /* LaunchScreen.storyboard in Resources */,
 				9B227AA62659408400D7E453 /* Assets.xcassets in Resources */,
 				9B6506A22658B41E00FAA877 /* Main.storyboard in Resources */,
 			);
