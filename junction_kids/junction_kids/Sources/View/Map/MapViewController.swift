@@ -79,9 +79,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
   
         let sourcePlacemark = MKPlacemark(coordinate: sourceLocation)
-        let sourceAnnotation = MKPointAnnotation()
+        
+        let sourceAnnotation = Pins()
+        
         if let location = sourcePlacemark.location {
             sourceAnnotation.coordinate = location.coordinate
+            sourceAnnotation.imageName = "currentpin"
         }
         
         findAddr(point: sourceAnnotation, lat: sourceLocation.latitude, long: sourceLocation.longitude)
@@ -145,6 +148,21 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             self.searchedItem = result.mapItems
             self.searchTableView.reloadData()
         })
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "Pins")
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "Pins")
+            annotationView?.canShowCallout = true
+        } else {
+            annotationView?.annotation = annotation
+        }
+
+        if let anno = annotation as? Pins {
+            annotationView?.image = UIImage(named: anno.imageName)
+        }
+        return annotationView
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

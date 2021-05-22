@@ -15,7 +15,7 @@ class VideoViewController: UIViewController, MKMapViewDelegate {
    
     //Starting a Simulation Btn Event
     @IBAction func playVideo(_ sender: UIButton) {
-        getVideoURL()
+        showVideo()
     }
     
     @IBOutlet weak var mapView: MKMapView! {
@@ -37,15 +37,10 @@ class VideoViewController: UIViewController, MKMapViewDelegate {
     }
     
     static let ViewID = "VideoViewController"
-    //Variable for API
-    var startX:Float = 0.0
-    var startY:Float = 0.0
-    var endX:Float = 0.0
-    var endY:Float = 0.0
-    var type:Int = 1
-    var videoURL:String = ""
     
+    //Variable for API
     var mapItem : MapItem!
+    var videoURL:String = ""
     var startText = ""
     var endText = ""
     
@@ -63,7 +58,7 @@ class VideoViewController: UIViewController, MKMapViewDelegate {
         let selectedRoute = RouteFactory.shared[mapItem.type]
         
         DispatchQueue.main.async { [weak self] in
-            self?.dayImageView.image = UIImage(named: selectedRoute.type.image())
+            self?.dayImageView.image = UIImage(named: selectedRoute.dayNight.image())
         }
         
         typeLabel.text = selectedRoute.carType
@@ -81,6 +76,7 @@ class VideoViewController: UIViewController, MKMapViewDelegate {
             if let status = response.response?.statusCode {
                 switch status {
                 case 200:
+                    print("status =",status)
                     guard let data = response.data else { return }
                     let decoder = JSONDecoder()
                     let result = try? decoder.decode(VideoResult.self, from: data)
@@ -100,7 +96,7 @@ class VideoViewController: UIViewController, MKMapViewDelegate {
     }
     
     private func showVideo(){
-        guard let url = URL(string: self.videoURL) else {
+        guard let url = URL(string: "http://49.50.162.246:443/test") else {
             return
         }
         
@@ -124,12 +120,15 @@ class VideoViewController: UIViewController, MKMapViewDelegate {
         let sourcePlacemark = MKPlacemark(coordinate: mapItem.startPoint)
         let destinationPlacemark = MKPlacemark(coordinate: mapItem.endPoint)
         
-        let sourceAnnotation = MKPointAnnotation()
-        let destinationAnnotation = MKPointAnnotation()
+        let sourceAnnotation = Pins()
+        
+        let destinationAnnotation = Pins()
         if let Slocation = sourcePlacemark.location,
            let Dlocation = destinationPlacemark.location {
             sourceAnnotation.coordinate = Slocation.coordinate
+            sourceAnnotation.imageName = "handliticon" 
             destinationAnnotation.coordinate = Dlocation.coordinate
+            destinationAnnotation.imageName = "currentpin"
         }
         
         mapView.showAnnotations([sourceAnnotation, destinationAnnotation], animated: true)
@@ -160,4 +159,18 @@ class VideoViewController: UIViewController, MKMapViewDelegate {
         return renderer
     }
    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "Pins")
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "Pins")
+            annotationView?.canShowCallout = true
+        } else {
+            annotationView?.annotation = annotation
+        }
+        
+        let anno = annotation as! Pins
+        annotationView?.image = UIImage(named: anno.imageName)
+        
+        return annotationView
+    }
 }
