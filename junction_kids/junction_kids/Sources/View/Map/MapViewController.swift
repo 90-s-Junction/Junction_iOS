@@ -21,9 +21,24 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         mapView.setRegion(region, animated: true)
     }
     
-    @IBOutlet weak var currentTextField: UITextField!
-    @IBOutlet weak var destinationTextField: UITextField!
+    @IBOutlet weak var currentTextField: UITextField! {
+        didSet {
+            currentTextField.delegate = self
+            currentTextField.clearButtonMode = .whileEditing
+        }
+    }
+    @IBOutlet weak var destinationTextField: UITextField! {
+        didSet {
+            destinationTextField.delegate = self
+            destinationTextField.clearButtonMode = .whileEditing
+        }
+    }
     
+    @IBOutlet weak var searchView: UIView! {
+        didSet {
+            searchView.isHidden = true
+        }
+    }
     @IBOutlet weak var searchTableView: UITableView! {
         didSet {
             searchTableView.delegate = self
@@ -32,21 +47,17 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
     }
     
-    @IBOutlet weak var tableView: UITableView! {
-        didSet {
-            tableView.delegate = self
-            tableView.dataSource = self
-            tableView.isHidden = true
-            
-        }
-    }
-    
     private var locationManager = CLLocationManager()
     private var currentLocation : CLLocation!
-    
-    private var startLocation: String = ""
+   
     private var endLocation: String = ""
     private var searchedItem : [MKMapItem] = []
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +65,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         getCurrentLocation()
         setUpMapView()
     }
-   
+    
     private func setUpMapView() {
         // 37.715133, 126.734086
         // 37.413294, 127.269311
@@ -66,28 +77,30 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             sourceLocation = CLLocationCoordinate2D(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
         }
         
-        let destinationLocation = CLLocationCoordinate2D(latitude: 37.561194, longitude: 127.037722)
+//        let destinationLocation = CLLocationCoordinate2D(latitude: 37.561194, longitude: 127.037722)
         
         let sourcePlacemark = MKPlacemark(coordinate: sourceLocation)
-        let destinationPlacemark = MKPlacemark(coordinate: destinationLocation)
+//        let destinationPlacemark = MKPlacemark(coordinate: destinationLocation)
        
         let sourceAnnotation = MKPointAnnotation()
         if let location = sourcePlacemark.location {
             sourceAnnotation.coordinate = location.coordinate
         }
+//
+//        let destinationAnnotation = MKPointAnnotation()
+//        if let location = destinationPlacemark.location {
+//            destinationAnnotation.coordinate = location.coordinate
+//        }
+    
         
-        let destinationAnnotation = MKPointAnnotation()
-        if let location = destinationPlacemark.location {
-            destinationAnnotation.coordinate = location.coordinate
-        }
-        
-        findAddr(point: destinationAnnotation, lat: destinationLocation.latitude, long: destinationLocation.longitude)
         findAddr(point: sourceAnnotation, lat: sourceLocation.latitude, long: sourceLocation.longitude)
+//        findAddr(point: destinationAnnotation, lat: destinationLocation.latitude, long: destinationLocation.longitude, isCurrent: false)
         
-        mapView.showAnnotations([sourceAnnotation, destinationAnnotation], animated: true)
+        mapView.showAnnotations([sourceAnnotation], animated: true)
+//        mapView.showAnnotations([sourceAnnotation, destinationAnnotation], animated: true)
         mapView.showsUserLocation = true
         mapView.setUserTrackingMode(.follow, animated: true)
-        showRouteOnMap(coordinate: sourceLocation, destinationCoordinate: destinationLocation)
+//        showRouteOnMap(coordinate: sourceLocation, destinationCoordinate: destinationLocation)
     }
     
     private func getCurrentLocation(){
@@ -144,8 +157,31 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                     myAdd += name
                 }
                 point.title = myAdd
+                self.currentTextField.text = myAdd
             }
         })
+    }
+    
+    func findAddr(lat: CLLocationDegrees, long: CLLocationDegrees) -> String{
+        let findLocation = CLLocation(latitude: lat, longitude: long)
+        let geocoder = CLGeocoder()
+        let locale = Locale(identifier: "en-US")
+        var value = ""
+        
+        geocoder.reverseGeocodeLocation(findLocation, preferredLocale: locale, completionHandler: {(placemarks, error) in
+            if let address: [CLPlacemark] = placemarks {
+                var myAdd: String = ""
+                if let area: String = address.last?.locality{
+                    myAdd += area
+                }
+                if let name: String = address.last?.name {
+                    myAdd += " "
+                    myAdd += name
+                }
+                value = myAdd
+            }
+        })
+        return value
     }
     
     private func searchRequest(_ text: String){
@@ -157,7 +193,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         search.start(completionHandler: { response, _ in
             guard let result = response else { return }
             self.searchedItem = result.mapItems
-            
+            self.searchTableView.reloadData()
         })
     }
     
@@ -175,33 +211,61 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("locationManager - update,",locations)
     }
+    
+    func presentNextVC(item: MKMapItem, index: Int) {
+        let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: MapRecommendViewController.ViewID) as! MapRecommendViewController
+        nextVC.mapItem = MapItem(startPoint: currentLocation.coordinate, endPoint: item.placemark.coordinate, type: index)
+        nextVC.startText = currentTextField.text!
+        nextVC.endText = endLocation
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
 }
 
 
 extension MapViewController : UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let text = textField.text?.trimmingCharacters(in: .whitespaces), !text.isEmpty else {return}
-        if textField == currentTextField {
-            startLocation = text
-        } else {
+        guard let text = textField.text?.trimmingCharacters(in: .whitespaces), !text.isEmpty else { return }
+        if textField != currentTextField {
             endLocation = text
         }
+        searchRequest(text)
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        searchView.isHidden = true
+        searchTableView.isHidden = true
+        return true
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        searchView.isHidden = false
+        searchTableView.isHidden = false
+        return true
     }
 }
 
 extension MapViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return searchedItem.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 2 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: MapRouteMoreTableViewCell.CellID) as! MapRouteMoreTableViewCell
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: MapRouteTableViewCell.CellID) as! MapRouteTableViewCell
-            
-            return cell
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: MapSearchTableViewCell.CellID) as! MapSearchTableViewCell
+        cell.bindViewModel(text: searchedItem[indexPath.row].name!)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        endLocation = searchedItem[indexPath.row].name!
+        presentNextVC(item: searchedItem[indexPath.row], index: indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return indexPath.section == 0 ? 60 : 240
     }
 }
