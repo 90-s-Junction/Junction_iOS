@@ -67,9 +67,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         setUpMapView()
     }
     
+    // 37.715133, 126.734086
+    // 37.413294, 127.269311
     private func setUpMapView() {
-        // 37.715133, 126.734086
-        // 37.413294, 127.269311
         var sourceLocation : CLLocationCoordinate2D!
         
         if currentLocation == nil {
@@ -77,31 +77,18 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         } else {
             sourceLocation = CLLocationCoordinate2D(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
         }
-        
-//        let destinationLocation = CLLocationCoordinate2D(latitude: 37.561194, longitude: 127.037722)
-        
+  
         let sourcePlacemark = MKPlacemark(coordinate: sourceLocation)
-//        let destinationPlacemark = MKPlacemark(coordinate: destinationLocation)
-       
         let sourceAnnotation = MKPointAnnotation()
         if let location = sourcePlacemark.location {
             sourceAnnotation.coordinate = location.coordinate
         }
-//
-//        let destinationAnnotation = MKPointAnnotation()
-//        if let location = destinationPlacemark.location {
-//            destinationAnnotation.coordinate = location.coordinate
-//        }
-    
         
         findAddr(point: sourceAnnotation, lat: sourceLocation.latitude, long: sourceLocation.longitude)
-//        findAddr(point: destinationAnnotation, lat: destinationLocation.latitude, long: destinationLocation.longitude, isCurrent: false)
         
         mapView.showAnnotations([sourceAnnotation], animated: true)
-//        mapView.showAnnotations([sourceAnnotation, destinationAnnotation], animated: true)
         mapView.showsUserLocation = true
         mapView.setUserTrackingMode(.follow, animated: true)
-//        showRouteOnMap(coordinate: sourceLocation, destinationCoordinate: destinationLocation)
     }
     
     private func getCurrentLocation(){
@@ -114,23 +101,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         currentLocation = locationManager.location
     }
-    
-    private func showRouteOnMap(coordinate: CLLocationCoordinate2D, destinationCoordinate: CLLocationCoordinate2D) {
-        let request = MKDirections.Request()
-        request.source = MKMapItem(placemark: MKPlacemark(coordinate: coordinate))
-        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: destinationCoordinate))
-        request.requestsAlternateRoutes = true
-        request.transportType = .automobile
-        
-        let directions = MKDirections(request: request)
-        directions.calculate(completionHandler: { [weak self] response, error in
-            guard let unWrappedResponse = response else { return }
-            if let route = unWrappedResponse.routes.first {
-                self?.mapView.addOverlay(route.polyline)
-                self?.mapView.setVisibleMapRect(route.polyline.boundingMapRect, edgePadding: .init(top: 80.0, left: 20.0, bottom: 100.0, right: 20.0), animated: true)
-            }
-        })
-    }
+
     
     private func zoomAndCenter(on centerCoordinate: CLLocationCoordinate2D, zoom: Double) {
         var span: MKCoordinateSpan = mapView.region.span
@@ -163,28 +134,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         })
     }
     
-    func findAddr(lat: CLLocationDegrees, long: CLLocationDegrees) -> String{
-        let findLocation = CLLocation(latitude: lat, longitude: long)
-        let geocoder = CLGeocoder()
-        let locale = Locale(identifier: "en-US")
-        var value = ""
-        
-        geocoder.reverseGeocodeLocation(findLocation, preferredLocale: locale, completionHandler: {(placemarks, error) in
-            if let address: [CLPlacemark] = placemarks {
-                var myAdd: String = ""
-                if let area: String = address.last?.locality{
-                    myAdd += area
-                }
-                if let name: String = address.last?.name {
-                    myAdd += " "
-                    myAdd += name
-                }
-                value = myAdd
-            }
-        })
-        return value
-    }
-    
     private func searchRequest(_ text: String){
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = text
@@ -198,13 +147,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         })
     }
     
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        let renderer = MKPolylineRenderer(overlay: overlay)
-        renderer.strokeColor = .leafgreen
-        renderer.lineWidth = 5.0
-        return renderer
-    }
-   
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("locationManagr - failed,",error)
     }
@@ -215,7 +157,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     func presentNextVC(item: MKMapItem, index: Int) {
         let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: MapRecommendViewController.ViewID) as! MapRecommendViewController
-        nextVC.mapItem = MapItem(startPoint: currentLocation.coordinate, endPoint: item.placemark.coordinate, type: index)
+        nextVC.mappableItem = MapItem(startPoint: currentLocation.coordinate, endPoint: item.placemark.coordinate, type: index)
         nextVC.startText = currentTextField.text!
         nextVC.endText = endLocation
         navigationController?.pushViewController(nextVC, animated: true)
@@ -263,7 +205,7 @@ extension MapViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         endLocation = searchedItem[indexPath.row].name!
-        presentNextVC(item: searchedItem[indexPath.row], index: indexPath.row)
+        presentNextVC(item: searchedItem[indexPath.row], index: -1)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

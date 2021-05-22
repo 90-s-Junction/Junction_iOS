@@ -21,7 +21,7 @@ class MapRecommendViewController: UIViewController {
     
     static let ViewID = "MapRecommendViewController"
     
-    var mapItem : MapItem!
+    var mappableItem : MapItem!
     var startText : String = ""
     var endText: String = ""
     
@@ -46,7 +46,12 @@ class MapRecommendViewController: UIViewController {
     }
     
     private func nextVC(index: Int) {
-        // nextVC
+        let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: VideoViewController.ViewID) as! VideoViewController
+        mappableItem.type = index
+        nextVC.mapItem = mappableItem
+        nextVC.startText = startText
+        nextVC.endText = endText
+        navigationController?.pushViewController(nextVC, animated: true)
     }
 }
 

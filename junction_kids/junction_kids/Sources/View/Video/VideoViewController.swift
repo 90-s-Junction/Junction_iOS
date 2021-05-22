@@ -6,16 +6,23 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 import AVFoundation
 import AVKit
 
-class VideoViewController: UIViewController {
+class VideoViewController: UIViewController, MKMapViewDelegate {
    
     //Starting a Simulation Btn Event
     @IBAction func playVideo(_ sender: UIButton) {
         getVideoURL()
     }
     
+    @IBOutlet weak var mapView: MKMapView! {
+        didSet {
+            mapView.delegate = self
+        }
+    }
     //Route Info View Elements
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var dayLabel: UILabel!
@@ -25,7 +32,11 @@ class VideoViewController: UIViewController {
     @IBOutlet weak var dayImageView: UIImageView!
     @IBOutlet weak var playVideoBtn: UIButton!
     
+    @IBAction func backButton(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
     
+    static let ViewID = "VideoViewController"
     //Variable for API
     var startX:Float = 0.0
     var startY:Float = 0.0
@@ -34,25 +45,40 @@ class VideoViewController: UIViewController {
     var type:Int = 1
     var videoURL:String = ""
     
+    var mapItem : MapItem!
+    var startText = ""
+    var endText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
+        setUpSubViews()
+        setUpMapView()
     }
     
-    func setUI(){
+    private func setUpSubViews(){
+        navigationController?.navigationBar.isHidden = true
         infoView.layer.cornerRadius = 10
         playVideoBtn.layer.cornerRadius = 10
+        
+        let selectedRoute = RouteFactory.shared[mapItem.type]
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.dayImageView.image = UIImage(named: selectedRoute.type.image())
+        }
+        
+        typeLabel.text = selectedRoute.carType
+        timeLabel.text = "\(selectedRoute.time)min"
+        distanceLabel.text = "\(selectedRoute.distance)km"
     }
-    
 
 
-    func getVideoURL(){
-        VideoService.shared.getVideo(startX: startX, startY: startY,
-                                       endX: endX, endY: endY, type: type,
-                                       completion: { response in
+    private func getVideoURL(){
+        VideoService.shared.getVideo(startX: Float(mapItem.startPoint.latitude),
+                                     startY: Float(mapItem.startPoint.longitude),
+                                     endX: Float(mapItem.endPoint.latitude),
+                                     endY: Float(mapItem.endPoint.longitude),
+                                     type: mapItem.type, completion: { response in
             if let status = response.response?.statusCode {
-                print("\(status)")
                 switch status {
                 case 200:
                     guard let data = response.data else { return }
@@ -73,7 +99,7 @@ class VideoViewController: UIViewController {
         })
     }
     
-    func showVideo(){
+    private func showVideo(){
         guard let url = URL(string: self.videoURL) else {
             return
         }
@@ -91,5 +117,47 @@ class VideoViewController: UIViewController {
         }
     }
     
+    
+    // MARK: Setting Map Kit
+    
+    private func setUpMapView() {
+        let sourcePlacemark = MKPlacemark(coordinate: mapItem.startPoint)
+        let destinationPlacemark = MKPlacemark(coordinate: mapItem.endPoint)
+        
+        let sourceAnnotation = MKPointAnnotation()
+        let destinationAnnotation = MKPointAnnotation()
+        if let Slocation = sourcePlacemark.location,
+           let Dlocation = destinationPlacemark.location {
+            sourceAnnotation.coordinate = Slocation.coordinate
+            destinationAnnotation.coordinate = Dlocation.coordinate
+        }
+        
+        mapView.showAnnotations([sourceAnnotation, destinationAnnotation], animated: true)
+        showRouteOnMap(coordinate: mapItem.startPoint, destinationCoordinate: mapItem.endPoint)
+    }
 
+    private func showRouteOnMap(coordinate: CLLocationCoordinate2D, destinationCoordinate: CLLocationCoordinate2D) {
+        let request = MKDirections.Request()
+        request.source = MKMapItem(placemark: MKPlacemark(coordinate: coordinate))
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: destinationCoordinate))
+        request.requestsAlternateRoutes = true
+        request.transportType = .automobile
+        
+        let directions = MKDirections(request: request)
+        directions.calculate(completionHandler: { [weak self] response, error in
+            guard let unWrappedResponse = response else { return }
+            if let route = unWrappedResponse.routes.first {
+                self?.mapView.addOverlay(route.polyline)
+                self?.mapView.setVisibleMapRect(route.polyline.boundingMapRect, edgePadding: .init(top: 80.0, left: 20.0, bottom: 100.0, right: 20.0), animated: true)
+            }
+        })
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        renderer.strokeColor = .leafgreen
+        renderer.lineWidth = 5.0
+        return renderer
+    }
+   
 }
