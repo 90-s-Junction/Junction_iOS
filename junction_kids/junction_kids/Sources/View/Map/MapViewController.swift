@@ -178,6 +178,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         nextVC.mappableItem = MapItem(startPoint: currentLocation.coordinate, endPoint: item.placemark.coordinate, type: index)
         nextVC.startText = currentTextField.text!
         nextVC.endText = endLocation
+        searchView.isHidden = true
+        searchTableView.isHidden = true
         navigationController?.pushViewController(nextVC, animated: true)
     }
 }
