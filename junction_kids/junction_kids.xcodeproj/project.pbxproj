@@ -26,6 +26,16 @@
 		9B6506A22658B41E00FAA877 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6506A12658B41E00FAA877 /* Main.storyboard */; };
 		9B6506A52658B43F00FAA877 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6506A42658B43F00FAA877 /* LaunchScreen.storyboard */; };
 		9BBB92262658E33400626C85 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBB92252658E33400626C85 /* MapViewController.swift */; };
+		A3387B432659953900C2D4E9 /* Volte Medium Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3387B392659953800C2D4E9 /* Volte Medium Italic.otf */; };
+		A3387B442659953900C2D4E9 /* Volte Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3387B3A2659953800C2D4E9 /* Volte Semibold.otf */; };
+		A3387B452659953900C2D4E9 /* Volte Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3387B3B2659953800C2D4E9 /* Volte Bold.otf */; };
+		A3387B462659953900C2D4E9 /* Volte Light Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3387B3C2659953800C2D4E9 /* Volte Light Italic.otf */; };
+		A3387B472659953900C2D4E9 /* Volte.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3387B3D2659953800C2D4E9 /* Volte.otf */; };
+		A3387B482659953900C2D4E9 /* Volte Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3387B3E2659953800C2D4E9 /* Volte Light.otf */; };
+		A3387B492659953900C2D4E9 /* Volte Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3387B3F2659953800C2D4E9 /* Volte Bold Italic.otf */; };
+		A3387B4A2659953900C2D4E9 /* Volte Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3387B402659953800C2D4E9 /* Volte Medium.otf */; };
+		A3387B4B2659953900C2D4E9 /* Volte Semibold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3387B412659953800C2D4E9 /* Volte Semibold Italic.otf */; };
+		A3387B4C2659953900C2D4E9 /* Volte Regular Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A3387B422659953800C2D4E9 /* Volte Regular Italic.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +64,16 @@
 		9B6506A12658B41E00FAA877 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9B6506A42658B43F00FAA877 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9BBB92252658E33400626C85 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A3387B392659953800C2D4E9 /* Volte Medium Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Volte Medium Italic.otf"; sourceTree = "<group>"; };
+		A3387B3A2659953800C2D4E9 /* Volte Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Volte Semibold.otf"; sourceTree = "<group>"; };
+		A3387B3B2659953800C2D4E9 /* Volte Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Volte Bold.otf"; sourceTree = "<group>"; };
+		A3387B3C2659953800C2D4E9 /* Volte Light Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Volte Light Italic.otf"; sourceTree = "<group>"; };
+		A3387B3D2659953800C2D4E9 /* Volte.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Volte.otf; sourceTree = "<group>"; };
+		A3387B3E2659953800C2D4E9 /* Volte Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Volte Light.otf"; sourceTree = "<group>"; };
+		A3387B3F2659953800C2D4E9 /* Volte Bold Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Volte Bold Italic.otf"; sourceTree = "<group>"; };
+		A3387B402659953800C2D4E9 /* Volte Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Volte Medium.otf"; sourceTree = "<group>"; };
+		A3387B412659953800C2D4E9 /* Volte Semibold Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Volte Semibold Italic.otf"; sourceTree = "<group>"; };
+		A3387B422659953800C2D4E9 /* Volte Regular Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Volte Regular Italic.otf"; sourceTree = "<group>"; };
 		B9F32D3CE0E6BF3887B26D1E /* Pods-junction_kids.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-junction_kids.release.xcconfig"; path = "Target Support Files/Pods-junction_kids/Pods-junction_kids.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +193,7 @@
 		9B6505E42658B09E00FAA877 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				A3D4309E265992280037808B /* Font */,
 				9B227ACA265973CE00D7E453 /* NetworkService */,
 				9B227AAC2659411B00D7E453 /* Extensions */,
 				9B227A9926591F0C00D7E453 /* View */,
@@ -203,6 +224,23 @@
 				44A41878B7CE8656288D95F5 /* Pods_junction_kids.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A3D4309E265992280037808B /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				A3387B3F2659953800C2D4E9 /* Volte Bold Italic.otf */,
+				A3387B3B2659953800C2D4E9 /* Volte Bold.otf */,
+				A3387B3C2659953800C2D4E9 /* Volte Light Italic.otf */,
+				A3387B3E2659953800C2D4E9 /* Volte Light.otf */,
+				A3387B392659953800C2D4E9 /* Volte Medium Italic.otf */,
+				A3387B402659953800C2D4E9 /* Volte Medium.otf */,
+				A3387B422659953800C2D4E9 /* Volte Regular Italic.otf */,
+				A3387B412659953800C2D4E9 /* Volte Semibold Italic.otf */,
+				A3387B3A2659953800C2D4E9 /* Volte Semibold.otf */,
+				A3387B3D2659953800C2D4E9 /* Volte.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,9 +303,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3387B4C2659953900C2D4E9 /* Volte Regular Italic.otf in Resources */,
+				A3387B482659953900C2D4E9 /* Volte Light.otf in Resources */,
+				A3387B442659953900C2D4E9 /* Volte Semibold.otf in Resources */,
+				A3387B4A2659953900C2D4E9 /* Volte Medium.otf in Resources */,
 				9B6506A52658B43F00FAA877 /* LaunchScreen.storyboard in Resources */,
+				A3387B472659953900C2D4E9 /* Volte.otf in Resources */,
 				9B227AA62659408400D7E453 /* Assets.xcassets in Resources */,
 				9B6506A22658B41E00FAA877 /* Main.storyboard in Resources */,
+				A3387B4B2659953900C2D4E9 /* Volte Semibold Italic.otf in Resources */,
+				A3387B452659953900C2D4E9 /* Volte Bold.otf in Resources */,
+				A3387B432659953900C2D4E9 /* Volte Medium Italic.otf in Resources */,
+				A3387B462659953900C2D4E9 /* Volte Light Italic.otf in Resources */,
+				A3387B492659953900C2D4E9 /* Volte Bold Italic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,7 +531,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				EXCLUDED_ARCHS = arm64;
+				DEVELOPMENT_TEAM = 6ZWU3ZJ8BG;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/junction_kids/DaumMap.embeddedframework",
@@ -513,7 +562,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				EXCLUDED_ARCHS = arm64;
+				DEVELOPMENT_TEAM = 6ZWU3ZJ8BG;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/junction_kids/DaumMap.embeddedframework",

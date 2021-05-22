@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d0a-HR-hug">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d0a-HR-hug">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Volte Bold.otf">
+            <string>Volte-Bold</string>
+        </array>
+        <array key="Volte.otf">
+            <string>Volte-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Map View Controller-->
         <scene sceneID="1Cx-k9-aAt">
@@ -36,11 +44,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8oa-TP-tB3">
-                                        <rect key="frame" x="18" y="160" width="378" height="736"/>
+                                        <rect key="frame" x="18" y="200" width="378" height="696"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MapSearchTableViewCell" rowHeight="60" id="lOs-5h-Q3h" customClass="MapSearchTableViewCell" customModule="junction_kids" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="378" height="60"/>
+                                                <rect key="frame" x="0.0" y="24.5" width="378" height="60"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lOs-5h-Q3h" id="cP5-DT-90Q">
                                                     <rect key="frame" x="0.0" y="0.0" width="378" height="60"/>
@@ -54,8 +62,8 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEf-Jq-5PW">
-                                                            <rect key="frame" x="48" y="19.5" width="42" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="48" y="22" width="42" height="16"/>
+                                                            <fontDescription key="fontDescription" name="Volte-Regular" family="Volte" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -76,7 +84,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="8oa-TP-tB3" firstAttribute="top" secondItem="rPd-qf-fet" secondAttribute="top" constant="160" id="9Qt-y3-Smb"/>
+                                    <constraint firstItem="8oa-TP-tB3" firstAttribute="top" secondItem="rPd-qf-fet" secondAttribute="top" constant="200" id="9Qt-y3-Smb"/>
                                     <constraint firstItem="8oa-TP-tB3" firstAttribute="leading" secondItem="rPd-qf-fet" secondAttribute="leading" constant="18" id="BRG-HP-YKd"/>
                                     <constraint firstAttribute="bottom" secondItem="8oa-TP-tB3" secondAttribute="bottom" id="rIA-gk-zIc"/>
                                     <constraint firstAttribute="trailing" secondItem="8oa-TP-tB3" secondAttribute="trailing" constant="18" id="sA6-AG-CDJ"/>
@@ -97,7 +105,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="n7m-VR-pgr"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Volte-Regular" family="Volte" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ru-3V-Orv">
@@ -111,18 +119,18 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchicon" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="35Q-4B-mWn">
-                                        <rect key="frame" x="21" y="64.5" width="14" height="15"/>
+                                        <rect key="frame" x="21" y="66.5" width="14" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="14" id="LSx-gN-reQ"/>
                                             <constraint firstAttribute="height" constant="15" id="wzO-Rp-oG8"/>
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="Where are you going to?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NFm-zu-lcW">
-                                        <rect key="frame" x="45" y="53.5" width="309" height="34"/>
+                                        <rect key="frame" x="45" y="56.5" width="309" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="sud-Fs-zTC"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Volte-Regular" family="Volte" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
@@ -130,7 +138,7 @@
                                 <constraints>
                                     <constraint firstItem="8Ru-3V-Orv" firstAttribute="centerY" secondItem="dem-fs-ZGn" secondAttribute="centerY" id="0Hd-Mn-qIk"/>
                                     <constraint firstItem="g3l-a0-Ad0" firstAttribute="leading" secondItem="dem-fs-ZGn" secondAttribute="leading" constant="21" id="9kM-8w-psE"/>
-                                    <constraint firstItem="NFm-zu-lcW" firstAttribute="top" secondItem="8Ru-3V-Orv" secondAttribute="bottom" constant="5" id="CIS-gV-4AT"/>
+                                    <constraint firstItem="NFm-zu-lcW" firstAttribute="top" secondItem="8Ru-3V-Orv" secondAttribute="bottom" constant="8" id="CIS-gV-4AT"/>
                                     <constraint firstItem="b2R-gf-Nha" firstAttribute="top" secondItem="dem-fs-ZGn" secondAttribute="top" constant="6" id="IdN-Wf-Kp8"/>
                                     <constraint firstItem="35Q-4B-mWn" firstAttribute="leading" secondItem="dem-fs-ZGn" secondAttribute="leading" constant="21" id="JKY-SP-2SP"/>
                                     <constraint firstItem="b2R-gf-Nha" firstAttribute="leading" secondItem="g3l-a0-Ad0" secondAttribute="trailing" constant="10" id="Jd0-P8-1sg"/>
@@ -141,7 +149,7 @@
                                     <constraint firstItem="g3l-a0-Ad0" firstAttribute="top" secondItem="dem-fs-ZGn" secondAttribute="top" constant="13" id="mr6-Bz-JDN"/>
                                     <constraint firstAttribute="height" constant="96" id="nhP-rm-q14"/>
                                     <constraint firstItem="NFm-zu-lcW" firstAttribute="leading" secondItem="35Q-4B-mWn" secondAttribute="trailing" constant="10" id="wQ4-wt-2mg"/>
-                                    <constraint firstItem="35Q-4B-mWn" firstAttribute="top" secondItem="8Ru-3V-Orv" secondAttribute="bottom" constant="16" id="xA1-Lh-dz5"/>
+                                    <constraint firstItem="35Q-4B-mWn" firstAttribute="top" secondItem="8Ru-3V-Orv" secondAttribute="bottom" constant="18" id="xA1-Lh-dz5"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -196,68 +204,68 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MapRouteTableViewCell" rowHeight="240" id="EvP-gh-McS" customClass="MapRouteTableViewCell" customModule="junction_kids" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="240"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="240"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EvP-gh-McS" id="TVP-M3-Aqx">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I3x-sB-Nnv">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I3x-sB-Nnv">
                                                     <rect key="frame" x="24" y="16" width="366" height="105"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="105" id="D9Z-Bn-GXE"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Route 01 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60T-Jm-nX1">
-                                                    <rect key="frame" x="23" y="137" width="104" height="29"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                    <rect key="frame" x="23" y="137" width="99.5" height="24"/>
+                                                    <fontDescription key="fontDescription" name="Volte-Bold" family="Volte" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaF-S3-4h8">
-                                                    <rect key="frame" x="23" y="183" width="32" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <rect key="frame" x="23" y="178" width="31" height="14"/>
+                                                    <fontDescription key="fontDescription" name="Volte-Regular" family="Volte" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYH-2F-pD4">
-                                                    <rect key="frame" x="23" y="208" width="34.5" height="17"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <rect key="frame" x="23" y="200" width="31.5" height="14"/>
+                                                    <fontDescription key="fontDescription" name="Volte-Bold" family="Volte" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFx-LD-tmU">
-                                                    <rect key="frame" x="84" y="183" width="32" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <rect key="frame" x="83" y="178" width="31.5" height="14"/>
+                                                    <fontDescription key="fontDescription" name="Volte-Regular" family="Volte" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wys-tC-hjt">
-                                                    <rect key="frame" x="84.5" y="208" width="34" height="17"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <rect key="frame" x="84.5" y="200" width="31.5" height="14"/>
+                                                    <fontDescription key="fontDescription" name="Volte-Bold" family="Volte" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBQ-Ek-Dfk">
-                                                    <rect key="frame" x="153" y="183" width="57" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <rect key="frame" x="151.5" y="178" width="57" height="14"/>
+                                                    <fontDescription key="fontDescription" name="Volte-Regular" family="Volte" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QmY-Mk-LtU">
-                                                    <rect key="frame" x="153" y="208" width="61" height="17"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <rect key="frame" x="153" y="200" width="56.5" height="14"/>
+                                                    <fontDescription key="fontDescription" name="Volte-Bold" family="Volte" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jj2-27-RMC">
-                                                    <rect key="frame" x="247" y="183" width="25" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <rect key="frame" x="245.5" y="178" width="26" height="14"/>
+                                                    <fontDescription key="fontDescription" name="Volte-Regular" family="Volte" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oy1-q7-Puo">
-                                                    <rect key="frame" x="249" y="208" width="16" height="16"/>
+                                                    <rect key="frame" x="249" y="200" width="16" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="6Xg-11-ZUM"/>
                                                         <constraint firstAttribute="width" constant="16" id="Xmx-UA-Qdu"/>
@@ -269,22 +277,22 @@
                                                 <constraint firstItem="I3x-sB-Nnv" firstAttribute="top" secondItem="TVP-M3-Aqx" secondAttribute="top" constant="16" id="0jw-Om-BhM"/>
                                                 <constraint firstItem="QmY-Mk-LtU" firstAttribute="top" secondItem="pBQ-Ek-Dfk" secondAttribute="bottom" constant="8" id="4Cg-E5-Ju9"/>
                                                 <constraint firstItem="60T-Jm-nX1" firstAttribute="leading" secondItem="TVP-M3-Aqx" secondAttribute="leadingMargin" constant="3" id="5C5-jz-TpI"/>
-                                                <constraint firstItem="jj2-27-RMC" firstAttribute="top" secondItem="I3x-sB-Nnv" secondAttribute="bottom" constant="62" id="BZu-Il-9HX"/>
                                                 <constraint firstItem="eYH-2F-pD4" firstAttribute="leading" secondItem="TVP-M3-Aqx" secondAttribute="leadingMargin" constant="3" id="Cjo-R7-nXV"/>
                                                 <constraint firstItem="wys-tC-hjt" firstAttribute="top" secondItem="MFx-LD-tmU" secondAttribute="bottom" constant="8" symbolic="YES" id="FaO-l0-j0S"/>
                                                 <constraint firstItem="MFx-LD-tmU" firstAttribute="top" secondItem="60T-Jm-nX1" secondAttribute="bottom" constant="17" id="IDC-gA-VLp"/>
                                                 <constraint firstItem="eYH-2F-pD4" firstAttribute="top" secondItem="SaF-S3-4h8" secondAttribute="bottom" constant="8" symbolic="YES" id="MLh-1m-mmH"/>
                                                 <constraint firstItem="oy1-q7-Puo" firstAttribute="top" secondItem="jj2-27-RMC" secondAttribute="bottom" constant="8" symbolic="YES" id="Spb-6e-S2P"/>
                                                 <constraint firstItem="wys-tC-hjt" firstAttribute="leading" secondItem="TVP-M3-Aqx" secondAttribute="leadingMargin" constant="64.5" id="Tvq-2G-lXd"/>
+                                                <constraint firstItem="pBQ-Ek-Dfk" firstAttribute="top" secondItem="MFx-LD-tmU" secondAttribute="top" id="UkK-Mh-bdG"/>
                                                 <constraint firstItem="pBQ-Ek-Dfk" firstAttribute="leading" secondItem="MFx-LD-tmU" secondAttribute="trailing" constant="37" id="WEk-FL-yIW"/>
                                                 <constraint firstItem="MFx-LD-tmU" firstAttribute="leading" secondItem="SaF-S3-4h8" secondAttribute="trailing" constant="29" id="XaR-uv-0AD"/>
+                                                <constraint firstItem="jj2-27-RMC" firstAttribute="top" secondItem="pBQ-Ek-Dfk" secondAttribute="top" id="Zp5-sN-Ckb"/>
                                                 <constraint firstItem="I3x-sB-Nnv" firstAttribute="leading" secondItem="TVP-M3-Aqx" secondAttribute="leadingMargin" constant="4" id="cDb-Mf-weT"/>
                                                 <constraint firstItem="SaF-S3-4h8" firstAttribute="leading" secondItem="TVP-M3-Aqx" secondAttribute="leadingMargin" constant="3" id="duu-9D-LQU"/>
                                                 <constraint firstItem="QmY-Mk-LtU" firstAttribute="leading" secondItem="TVP-M3-Aqx" secondAttribute="leadingMargin" constant="133" id="he4-eg-DhV"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="I3x-sB-Nnv" secondAttribute="trailing" constant="4" id="iF1-Jz-s0B"/>
                                                 <constraint firstItem="jj2-27-RMC" firstAttribute="leading" secondItem="pBQ-Ek-Dfk" secondAttribute="trailing" constant="37" id="imx-li-22Y"/>
                                                 <constraint firstItem="60T-Jm-nX1" firstAttribute="top" secondItem="I3x-sB-Nnv" secondAttribute="bottom" constant="16" id="mf7-4C-b9R"/>
-                                                <constraint firstItem="pBQ-Ek-Dfk" firstAttribute="top" secondItem="I3x-sB-Nnv" secondAttribute="bottom" constant="62" id="qdp-cJ-bSy"/>
                                                 <constraint firstItem="SaF-S3-4h8" firstAttribute="top" secondItem="60T-Jm-nX1" secondAttribute="bottom" constant="17" id="wr0-15-Y7W"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -307,14 +315,14 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1CP-LL-KWW">
-                                <rect key="frame" x="58" y="116" width="43" height="20"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <rect key="frame" x="58" y="118" width="40.5" height="16"/>
+                                <fontDescription key="fontDescription" name="Volte-Bold" family="Volte" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4AW-XZ-7m6">
-                                <rect key="frame" x="58" y="66" width="43" height="20"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <rect key="frame" x="58" y="91" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="0.0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -352,15 +360,15 @@
                             <constraint firstItem="Xrd-oC-dd8" firstAttribute="leading" secondItem="jBK-IZ-GBf" secondAttribute="leading" constant="24" id="HY4-uP-DUi"/>
                             <constraint firstItem="xV3-rc-wFu" firstAttribute="leading" secondItem="jBK-IZ-GBf" secondAttribute="leading" id="OXz-ks-TbE"/>
                             <constraint firstItem="LYJ-YC-bVp" firstAttribute="trailing" secondItem="jBK-IZ-GBf" secondAttribute="trailing" id="R5x-G7-S7b"/>
-                            <constraint firstItem="xV3-rc-wFu" firstAttribute="top" secondItem="1CP-LL-KWW" secondAttribute="bottom" constant="18" id="Rja-WQ-BC1"/>
                             <constraint firstItem="aA8-Cg-p1B" firstAttribute="leading" secondItem="jBK-IZ-GBf" secondAttribute="leading" constant="26" id="Tkc-Ct-daE"/>
                             <constraint firstItem="LYJ-YC-bVp" firstAttribute="bottom" secondItem="jBK-IZ-GBf" secondAttribute="bottom" id="TlU-zl-XFt"/>
                             <constraint firstItem="LYJ-YC-bVp" firstAttribute="leading" secondItem="jBK-IZ-GBf" secondAttribute="leading" id="XNd-4y-e7w"/>
                             <constraint firstItem="4AW-XZ-7m6" firstAttribute="leading" secondItem="o11-02-5ov" secondAttribute="trailing" constant="19" id="bUs-0V-ky9"/>
                             <constraint firstItem="xV3-rc-wFu" firstAttribute="top" secondItem="Xrd-oC-dd8" secondAttribute="bottom" constant="18" id="bxJ-4Z-YPv"/>
-                            <constraint firstItem="Xrd-oC-dd8" firstAttribute="top" secondItem="aA8-Cg-p1B" secondAttribute="bottom" constant="6" id="lhI-lb-BpW"/>
+                            <constraint firstItem="1CP-LL-KWW" firstAttribute="centerY" secondItem="Xrd-oC-dd8" secondAttribute="centerY" id="cAT-2t-rGj"/>
+                            <constraint firstItem="Xrd-oC-dd8" firstAttribute="top" secondItem="aA8-Cg-p1B" secondAttribute="bottom" constant="6.1799999999999997" id="lhI-lb-BpW"/>
                             <constraint firstItem="jBK-IZ-GBf" firstAttribute="trailing" secondItem="xV3-rc-wFu" secondAttribute="trailing" id="lkU-QI-Ftd"/>
-                            <constraint firstItem="1CP-LL-KWW" firstAttribute="top" secondItem="4AW-XZ-7m6" secondAttribute="bottom" constant="30" id="sw5-aP-sGa"/>
+                            <constraint firstItem="1CP-LL-KWW" firstAttribute="top" secondItem="4AW-XZ-7m6" secondAttribute="bottom" constant="27" id="sw5-aP-sGa"/>
                             <constraint firstItem="LYJ-YC-bVp" firstAttribute="top" secondItem="jBK-IZ-GBf" secondAttribute="top" constant="120" id="vvY-LH-bgs"/>
                             <constraint firstItem="o11-02-5ov" firstAttribute="leading" secondItem="jBK-IZ-GBf" secondAttribute="leading" constant="24" id="y60-Nw-yNV"/>
                         </constraints>
@@ -421,7 +429,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="rBo-Ho-Cev"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Volte-Bold" family="Volte" pointSize="16"/>
                                 <state key="normal" title="Starting a Simulation">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -433,56 +441,56 @@
                                 <rect key="frame" x="26" y="615" width="362" height="141"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommanded Route" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qb6-We-JjP">
-                                        <rect key="frame" x="23" y="24" width="174" height="20"/>
+                                        <rect key="frame" x="23" y="24" width="232.5" height="24"/>
                                         <color key="tintColor" red="0.19215686269999999" green="0.1960784314" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Volte-Bold" family="Volte" pointSize="24"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GE0-a6-GYY">
-                                        <rect key="frame" x="23" y="60" width="32" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="23" y="64" width="31" height="14"/>
+                                        <fontDescription key="fontDescription" name="Volte-Regular" family="Volte" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKR-JP-nsU">
-                                        <rect key="frame" x="81" y="60" width="32" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="80" y="64" width="31.5" height="14"/>
+                                        <fontDescription key="fontDescription" name="Volte-Regular" family="Volte" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIn-HP-aNO">
-                                        <rect key="frame" x="23" y="88.5" width="37.5" height="17"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <rect key="frame" x="23" y="89.5" width="35.5" height="14"/>
+                                        <fontDescription key="fontDescription" name="Volte-Bold" family="Volte" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbW-k8-1vS">
-                                        <rect key="frame" x="81" y="89" width="37.5" height="17"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <rect key="frame" x="81" y="90" width="35.5" height="14"/>
+                                        <fontDescription key="fontDescription" name="Volte-Bold" family="Volte" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4F-yv-tpd">
-                                        <rect key="frame" x="139" y="60" width="56.5" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="137.5" y="64" width="57" height="14"/>
+                                        <fontDescription key="fontDescription" name="Volte-Regular" family="Volte" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Night" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcE-GG-oVO">
-                                        <rect key="frame" x="221.5" y="60" width="35" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="220.5" y="64" width="36.5" height="14"/>
+                                        <fontDescription key="fontDescription" name="Volte-Regular" family="Volte" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyc-ke-SrH">
-                                        <rect key="frame" x="139" y="89" width="37.5" height="17"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <rect key="frame" x="139" y="90" width="35.5" height="14"/>
+                                        <fontDescription key="fontDescription" name="Volte-Bold" family="Volte" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qLM-dy-bro">
-                                        <rect key="frame" x="221.5" y="89" width="15" height="15"/>
+                                        <rect key="frame" x="221.5" y="90" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="15" id="96f-dT-ATa"/>
                                             <constraint firstAttribute="height" constant="15" id="Jfc-to-Cmr"/>

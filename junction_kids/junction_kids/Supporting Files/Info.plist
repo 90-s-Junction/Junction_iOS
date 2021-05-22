@@ -2,6 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Volte Bold Italic.otf</string>
+		<string>Volte Bold.otf</string>
+		<string>Volte Light Italic.otf</string>
+		<string>Volte Light.otf</string>
+		<string>Volte Medium Italic.otf</string>
+		<string>Volte Medium.otf</string>
+		<string>Volte Regular Italic.otf</string>
+		<string>Volte Semibold Italic.otf</string>
+		<string>Volte Semibold.otf</string>
+		<string>Volte.otf</string>
+	</array>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string></string>
 	<key>NSLocationWhenInUseUsageDescription</key>
