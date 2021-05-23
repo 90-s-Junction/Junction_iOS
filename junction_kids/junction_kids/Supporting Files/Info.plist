@@ -25,11 +25,11 @@
 		<string>Volte.otf</string>
 	</array>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string></string>
+	<string>위치 정보를 위한 권한을 요청합니다.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>위치 정보를 위한 권한을 요청합니다.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string></string>
+	<string>위치 정보를 위한 권한을 요청합니다.</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>googlechromes</string>
