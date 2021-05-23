@@ -57,14 +57,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
-        
+        getCurrentLocation()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        getCurrentLocation()
         setUpMapView()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     // 37.715133, 126.734086
@@ -93,7 +95,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         mapView.showsUserLocation = true
         mapView.setUserTrackingMode(.follow, animated: true)
     }
-    
+  
     private func getCurrentLocation(){
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -123,7 +125,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         geocoder.reverseGeocodeLocation(findLocation, preferredLocale: locale, completionHandler: {(placemarks, error) in
             if let address: [CLPlacemark] = placemarks {
-                var myAdd: String = ""
+                var myAdd: String = "Now: "
                 if let area: String = address.last?.locality{
                     myAdd += area
                 }
