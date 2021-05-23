@@ -53,14 +53,15 @@ It has been several years since 'User A' obtained his license, but he has little
 
 ---
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3ce8797c-06b9-478f-85d9-a176f495d28b/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3ce8797c-06b9-478f-85d9-a176f495d28b/Untitled.png)
+![branding](https://user-images.githubusercontent.com/25509153/119248636-690bc180-bbcd-11eb-8442-ae1448a9e33a.png)
+
 
 ## 🧙‍♀️ UI Design
 
 ---
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/52beecdc-d748-4326-8560-11ed57f49b61/Screen_Shot_2021-05-23_at_5.42.33_AM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/52beecdc-d748-4326-8560-11ed57f49b61/Screen_Shot_2021-05-23_at_5.42.33_AM.png)
+<img width="800" alt="wireframe" src="https://user-images.githubusercontent.com/25509153/119248475-5c3a9e00-bbcc-11eb-865d-e807af041959.png" height="400" >
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/78f3267a-68d2-45dc-b51b-e48f2e64de05/_2021-05-23__1.21.00.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/78f3267a-68d2-45dc-b51b-e48f2e64de05/_2021-05-23__1.21.00.png)
+<img width="800" alt="videoimage" src="https://user-images.githubusercontent.com/25509153/119248501-7ffde400-bbcc-11eb-89e9-da512aa03ad3.png" height="400" >
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3ddb19ac-c07c-4a02-a075-1f6f5a722681/_2021-05-23__1.21.16.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3ddb19ac-c07c-4a02-a075-1f6f5a722681/_2021-05-23__1.21.16.png)
+
