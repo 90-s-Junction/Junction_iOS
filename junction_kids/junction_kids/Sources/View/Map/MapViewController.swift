@@ -50,6 +50,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     private var locationManager = CLLocationManager()
     private var currentLocation : CLLocation!
    
+    private var startLocation = "" {
+        didSet {
+            currentTextField.text = startLocation
+        }
+    }
     private var endLocation: String = ""
     private var searchedItem : [MKMapItem] = []
     
@@ -73,11 +78,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     private func setUpMapView() {
         var sourceLocation : CLLocationCoordinate2D!
         
-        if currentLocation == nil {
-            sourceLocation = CLLocationCoordinate2D(latitude: 37.715133, longitude: 126.734086)
-        } else {
-            sourceLocation = CLLocationCoordinate2D(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
-        }
+        guard let location = currentLocation else {return}
+        sourceLocation = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        
   
         let sourcePlacemark = MKPlacemark(coordinate: sourceLocation)
         
@@ -103,10 +106,20 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestLocation()
         
-        currentLocation = locationManager.location
-        setUpMapView()
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways, .authorizedWhenInUse:
+            print("GPS: 권한 있음")
+            currentLocation = locationManager.location
+            print("currentlocation", currentLocation)
+            setUpMapView()
+        case .restricted, .notDetermined:
+            print("GPS: 아직 선택하지 않음")
+        case .denied:
+            print("GPS: 권한 없음")
+        default:
+            print("GPS: Default")
+        }
     }
-
     
     private func zoomAndCenter(on centerCoordinate: CLLocationCoordinate2D, zoom: Double) {
         var span: MKCoordinateSpan = mapView.region.span
@@ -123,7 +136,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         let geocoder = CLGeocoder()
         let locale = Locale(identifier: "en-US")
         
-        geocoder.reverseGeocodeLocation(findLocation, preferredLocale: locale, completionHandler: {(placemarks, error) in
+        geocoder.reverseGeocodeLocation(findLocation, preferredLocale: locale, completionHandler: { [self](placemarks, error) in
             if let address: [CLPlacemark] = placemarks {
                 var myAdd: String = "Now: "
                 if let area: String = address.last?.locality{
@@ -134,7 +147,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                     myAdd += name
                 }
                 point.title = myAdd
-                self.currentTextField.text = myAdd
+                startLocation = myAdd
             }
         })
     }
