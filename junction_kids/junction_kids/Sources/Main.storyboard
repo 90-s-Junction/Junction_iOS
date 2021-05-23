@@ -463,9 +463,9 @@
                                 <rect key="frame" x="26" y="615" width="362" height="141"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommanded Route" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qb6-We-JjP">
-                                        <rect key="frame" x="23" y="24" width="232.5" height="24"/>
+                                        <rect key="frame" x="23" y="24" width="236" height="24"/>
                                         <color key="tintColor" red="0.19215686269999999" green="0.1960784314" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Volte-Bold" family="Volte" pointSize="24"/>
+                                        <fontDescription key="fontDescription" name="Volte-Semibold" family="Volte" pointSize="24"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -482,14 +482,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIn-HP-aNO">
-                                        <rect key="frame" x="23" y="89.5" width="35.5" height="14"/>
-                                        <fontDescription key="fontDescription" name="Volte-Bold" family="Volte" pointSize="14"/>
+                                        <rect key="frame" x="23" y="89.5" width="36" height="14"/>
+                                        <fontDescription key="fontDescription" name="Volte-Medium" family="Volte" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbW-k8-1vS">
-                                        <rect key="frame" x="81" y="90" width="35.5" height="14"/>
-                                        <fontDescription key="fontDescription" name="Volte-Bold" family="Volte" pointSize="14"/>
+                                        <rect key="frame" x="81" y="90" width="36" height="14"/>
+                                        <fontDescription key="fontDescription" name="Volte-Medium" family="Volte" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -506,8 +506,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyc-ke-SrH">
-                                        <rect key="frame" x="139" y="90" width="35.5" height="14"/>
-                                        <fontDescription key="fontDescription" name="Volte-Bold" family="Volte" pointSize="14"/>
+                                        <rect key="frame" x="139" y="90" width="36" height="14"/>
+                                        <fontDescription key="fontDescription" name="Volte-Medium" family="Volte" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>

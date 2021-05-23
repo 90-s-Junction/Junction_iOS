@@ -65,51 +65,21 @@ class VideoViewController: UIViewController, MKMapViewDelegate {
         timeLabel.text = "\(selectedRoute.time)min"
         distanceLabel.text = "\(selectedRoute.distance)km"
     }
-
-
-    private func getVideoURL(){
-        VideoService.shared.getVideo(startX: Float(mapItem.startPoint.latitude),
-                                     startY: Float(mapItem.startPoint.longitude),
-                                     endX: Float(mapItem.endPoint.latitude),
-                                     endY: Float(mapItem.endPoint.longitude),
-                                     type: mapItem.type, completion: { response in
-            if let status = response.response?.statusCode {
-                switch status {
-                case 200:
-                    print("status =",status)
-                    guard let data = response.data else { return }
-                    let decoder = JSONDecoder()
-                    let result = try? decoder.decode(VideoResult.self, from: data)
-                    guard let url = result?.videoURL else { return }
-                    self.videoURL = url
-                    self.showVideo()
-                    break
-                case 401...404:
-                    break
-                case 500:
-                    break
-                default:
-                    return
-                }
-            }
-        })
-    }
     
     private func showVideo(){
-        guard let url = URL(string: "http://49.50.162.246:443/test") else {
-            return
-        }
+        let url = "http://49.50.162.246:443/getVideo/"
+        let requestURL = "\(mapItem.startPoint.latitude)/\(mapItem.startPoint.longitude)/\(mapItem.endPoint.latitude)/\(mapItem.endPoint.longitude)/\(mapItem.type)"
         
-        // Create an AVPlayer, passing it the HTTP Live Streaming URL.
-        let player = AVPlayer(url: url)
-
-        // Create a new AVPlayerViewController and pass it a reference to the player.
-        let controller = AVPlayerViewController()
-        controller.player = player
-
-        // Modally present the player and call the player's play() method when compl ete.
-        present(controller, animated: true) {
-            player.play()
+        if let url = URL(string: url+requestURL) {
+            let player = AVPlayer(url: url)
+            let controller = AVPlayerViewController()
+            controller.player = player
+            
+            present(controller, animated: true) {
+                player.play()
+            }
+        } else {
+            print("networking error! UnCorrect Data")
         }
     }
     

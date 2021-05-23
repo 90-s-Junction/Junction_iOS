@@ -72,6 +72,6 @@ extension MapRecommendViewController : UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        nextVC(index: indexPath.row)
+        nextVC(index: indexPath.row + 1)
     }
 }

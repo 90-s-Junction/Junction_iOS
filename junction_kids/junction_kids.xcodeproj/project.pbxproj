@@ -17,8 +17,6 @@
 		9B227AB326595F9600D7E453 /* MapRecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B227AB226595F9600D7E453 /* MapRecommendViewController.swift */; };
 		9B227AB62659664400D7E453 /* MapItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B227AB52659664400D7E453 /* MapItem.swift */; };
 		9B227AC82659723900D7E453 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B227AC72659723900D7E453 /* VideoViewController.swift */; };
-		9B227ACD265973CE00D7E453 /* VideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B227ACB265973CE00D7E453 /* VideoService.swift */; };
-		9B227ACE265973CE00D7E453 /* VideoResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B227ACC265973CE00D7E453 /* VideoResult.swift */; };
 		9B227AD1265973EE00D7E453 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B227AD0265973EE00D7E453 /* APIManager.swift */; };
 		9B5A8D66265980A800638AD9 /* Pins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5A8D65265980A800638AD9 /* Pins.swift */; };
 		9B6506862658B09F00FAA877 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6506782658B09F00FAA877 /* AppDelegate.swift */; };
@@ -49,8 +47,6 @@
 		9B227AB226595F9600D7E453 /* MapRecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRecommendViewController.swift; sourceTree = "<group>"; };
 		9B227AB52659664400D7E453 /* MapItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapItem.swift; sourceTree = "<group>"; };
 		9B227AC72659723900D7E453 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
-		9B227ACB265973CE00D7E453 /* VideoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoService.swift; sourceTree = "<group>"; };
-		9B227ACC265973CE00D7E453 /* VideoResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoResult.swift; sourceTree = "<group>"; };
 		9B227AD0265973EE00D7E453 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		9B5A8D65265980A800638AD9 /* Pins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pins.swift; sourceTree = "<group>"; };
 		9B6505CC2658AF1900FAA877 /* junction_kids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = junction_kids.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,15 +150,6 @@
 			path = Video;
 			sourceTree = "<group>";
 		};
-		9B227ACA265973CE00D7E453 /* NetworkService */ = {
-			isa = PBXGroup;
-			children = (
-				9B227ACB265973CE00D7E453 /* VideoService.swift */,
-				9B227ACC265973CE00D7E453 /* VideoResult.swift */,
-			);
-			path = NetworkService;
-			sourceTree = "<group>";
-		};
 		9B6505C32658AF1900FAA877 = {
 			isa = PBXGroup;
 			children = (
@@ -194,7 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				A3D4309E265992280037808B /* Font */,
-				9B227ACA265973CE00D7E453 /* NetworkService */,
 				9B227AAC2659411B00D7E453 /* Extensions */,
 				9B227A9926591F0C00D7E453 /* View */,
 				9B227A9826591F0700D7E453 /* Model */,
@@ -386,7 +372,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B227AA026591FA800D7E453 /* MapModel.swift in Sources */,
-				9B227ACD265973CE00D7E453 /* VideoService.swift in Sources */,
 				9B227AAE2659412900D7E453 /* Color+.swift in Sources */,
 				9B5A8D66265980A800638AD9 /* Pins.swift in Sources */,
 				9B6506862658B09F00FAA877 /* AppDelegate.swift in Sources */,
@@ -398,7 +383,6 @@
 				9B227A9126591C0200D7E453 /* MapRouteTableViewCell.swift in Sources */,
 				9B6506882658B09F00FAA877 /* SceneDelegate.swift in Sources */,
 				9BBB92262658E33400626C85 /* MapViewController.swift in Sources */,
-				9B227ACE265973CE00D7E453 /* VideoResult.swift in Sources */,
 				9B227A9C26591F3900D7E453 /* MapRouteModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
